@@ -6,8 +6,6 @@ module "network" {
 
 module "acr" {
   source = "./modules/acr"
-  location = var.location
-  resource_group_name = var.resource_group_name
 }
 
 module "aks" {
