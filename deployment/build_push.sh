@@ -1,8 +1,9 @@
 #!/bin/bash
 ACR_NAME="SmartwyreXacr"
 IMAGE_NAME="hello-world"
-TAG="latest"
+IMAGE_TAG="latest"
 
-docker build -t $IMAGE_NAME:$IMAGE_TAG .
+docker pull $IMAGE_NAME:$IMAGE_TAG
+docker tag $IMAGE_NAME:$IMAGE_TAG $ACR_NAME/$IMAGE_NAME:$IMAGE_TAG
 az acr login --name $ACR_NAME
-docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$TAG
+docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
