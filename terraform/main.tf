@@ -1,16 +1,19 @@
 module "network" {
   source = "./modules/network"
-  # Configuration variables
+  location = var.location
+  resource_group_name = var.resource_group_name
 }
 
 module "acr" {
   source = "./modules/acr"
-  # Configuration variables
+  location = var.location
+  resource_group_name = var.resource_group_name
 }
 
 module "aks" {
   source = "./modules/aks"
-  # Configuration variables
+  location = var.location
+  resource_group_name = var.resource_group_name
 }
 
 output "kubeconfig" {
