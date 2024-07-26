@@ -21,9 +21,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          client-id: "ad73cf00-da95-4fd4-8183-f00a635c1a30"
-          tenant-id: "3abc5e4e-1080-4991-a58f-815a337e150b"
-          subscription-id: "41baa1e3-240b-4ac6-9767-ebff98622ea2"
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Build and push Docker image
         run: |
