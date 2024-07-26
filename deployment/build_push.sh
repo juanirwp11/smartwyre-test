@@ -1,5 +1,5 @@
 #!/bin/bash
-ACR_NAME="<acr_name>"
+ACR_NAME="Smartwyre-acr"
 IMAGE_NAME="hello-world"
 TAG="latest"
 
