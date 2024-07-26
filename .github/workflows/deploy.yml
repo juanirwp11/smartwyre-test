@@ -24,8 +24,9 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Build and push Docker image
+        shell: bash-wrapper {0}
         run: |
-          ./deployment/build_push.sh
+           bash build_push.sh
 
       - name: Run Terraform
         run: |
