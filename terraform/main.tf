@@ -16,6 +16,12 @@ module "aks" {
   location            = var.location
 }
 
+module "rg" {
+  source = "./modules/rg"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+}
+
 # output "kubeconfig" {
 #   value     = module.aks.kube_config_raw
 #   sensitive = true
