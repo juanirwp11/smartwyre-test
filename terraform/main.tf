@@ -17,6 +17,6 @@ module "aks" {
 }
 
 output "kubeconfig" {
-  value     = module.aks.kubeconfig
+  value     = module.aks.kube_config_raw
   sensitive = true
 }
