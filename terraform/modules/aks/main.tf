@@ -7,7 +7,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   default_node_pool {
     name       = "default"
     node_count = 2
-    vm_size    = "B2s"
+    vm_size    = "standard_a2_v2"
     zones = ["3"]
   }
 
