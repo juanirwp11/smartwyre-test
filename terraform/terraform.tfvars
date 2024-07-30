@@ -1,2 +1,2 @@
-resource_group_name = "Smartwyre-RG"
+resource_group_name = "test-RG"
 location = "eastus"
