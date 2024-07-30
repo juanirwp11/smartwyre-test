@@ -1,9 +1,9 @@
 variable "resource_group_name" {
-  description = "Smartwyre-RG"
+  description = "Resource Group Name"
   type = string
 }
 
 variable "location" {
-  description = "eastus"
+  description = "Azure Location"
   type = string
 }
