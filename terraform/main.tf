@@ -18,7 +18,7 @@ module "aks" {
 
 module "rg" {
   source = "./modules/rg"
-  name = var.resource_group_name
+  resource_group_name = var.resource_group_name
   location = var.location
 }
 
