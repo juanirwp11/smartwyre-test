@@ -3,12 +3,12 @@ resource "azurerm_kubernetes_cluster" "main" {
   location            = var.location
   resource_group_name = var.resource_group_name
   dns_prefix          = "aksdns"
-  zones = 3
 
   default_node_pool {
     name       = "default"
     node_count = 2
     vm_size    = "Standard_B1ls"
+    zones = {3}
   }
 
   identity {
