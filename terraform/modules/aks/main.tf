@@ -22,3 +22,8 @@ resource "azurerm_kubernetes_cluster" "main" {
     docker_bridge_cidr = "172.17.0.1/16"
   }
 }
+
+output "kube_config" {
+  value     = azurerm_kubernetes_cluster.main.kube_config_raw
+  sensitive = true
+}
