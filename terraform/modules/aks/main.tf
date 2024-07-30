@@ -8,7 +8,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     name       = "default"
     node_count = 2
     vm_size    = "Standard_B1ls"
-    zones = 3
+    zones = ["3"]
   }
 
   identity {
