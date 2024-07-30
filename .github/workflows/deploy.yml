@@ -23,18 +23,17 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
- /*     - name: Run Terraform RG, ACR and NETWORK
-        run: |
-          cd terraform
-          terraform init
-          terraform apply -target=module.rg -auto-approve
-          terraform apply -target=module.acr -auto-approve
-          terraform apply -target=module.network -auto-approve
+ #     - name: Run Terraform RG, ACR and NETWORK
+ #       run: |
+ #         cd terraform
+ #         terraform init
+ #         terraform apply -target=module.rg -auto-approve
+ #         terraform apply -target=module.acr -auto-approve
+ #         terraform apply -target=module.network -auto-approve
 
-      - name: Build and push Docker image
-        run: |
-          ./deployment/build_push.sh
-  */
+ #     - name: Build and push Docker image
+ #       run: |
+ #         ./deployment/build_push.sh
 
       - name: Run Terraform AKS
         run: |
