@@ -16,7 +16,7 @@ module "aks" {
   location            = var.location
 }
 
-output "kubeconfig" {
-  value     = module.aks.kube_config_raw
-  sensitive = true
-}
+# output "kubeconfig" {
+#   value     = module.aks.kube_config_raw
+#   sensitive = true
+# }
