@@ -44,7 +44,7 @@ jobs:
       - name: Get kubeconfig
         id: get_kubeconfig
         run: echo "::set-output name=kubeconfig::$(terraform output -raw kube_config)"
-        working-directory: /terraform
+        working-directory: ./terraform
   
       - name: Install kubectl
         run: |
