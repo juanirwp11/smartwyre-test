@@ -40,3 +40,22 @@ jobs:
           cd terraform
           terraform init
           terraform apply -target=module.aks -auto-approve
+
+      - name: Get kubeconfig
+        id: get_kubeconfig
+        run: echo "::set-output name=kubeconfig::$(terraform output -raw kube_config)"
+        working-directory: ./terraform/aks
+  
+      - name: Install kubectl
+        run: |
+          curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x ./kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+  
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ steps.get_kubeconfig.outputs.kubeconfig }}" > $HOME/.kube/config
+  
+      - name: Deploy to AKS
+        run: kubectl apply -f deployment/manifests/deployment.yaml
