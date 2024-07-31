@@ -35,16 +35,16 @@ jobs:
  #       run: |
  #         ./deployment/build_push.sh
 
-      - name: Run Terraform AKS
-        run: |
-          cd terraform
-          terraform init
-          terraform apply -target=module.aks -auto-approve
+ #     - name: Run Terraform AKS
+ #       run: |
+ #         cd terraform
+ #         terraform init
+ #         terraform apply -target=module.aks -auto-approve
 
       - name: Get kubeconfig
         id: get_kubeconfig
         run: echo "::set-output name=kubeconfig::$(terraform output -raw kube_config)"
-        working-directory: ./terraform/aks
+        working-directory: /terraform/aks
   
       - name: Install kubectl
         run: |
