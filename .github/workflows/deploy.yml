@@ -58,4 +58,6 @@ jobs:
           echo "${{ steps.get_kubeconfig.outputs.kubeconfig }}" > $HOME/.kube/config
   
       - name: Deploy to AKS
-        run: kubectl apply -f deployment/manifests/deployment.yaml
+        run: |
+          apply -f ./deployment/manifests/deployment.yaml
+          apply -f ./deployment/manifests/service.yaml
