@@ -55,7 +55,7 @@ jobs:
       - name: Configure kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ steps.get_kubeconfig.outputs.kubeconfig }}" > $HOME/kube/config
+          echo "${{ steps.get_kubeconfig.outputs.kubeconfig }}" > $HOME/.kube/config
   
       - name: Deploy to AKS
         run: |
